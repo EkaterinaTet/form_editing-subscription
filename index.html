@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header__content">
+        <a href="#" class="logo">
+          <img
+            src="img/logo-darkbackground.svg"
+            class="logo_darkbackground"
+            alt="brand analytics"
+          />
+        </a>
+        <nav>
+          <ul class="header-nav__items">
+            <li class="header-nav__item"><a href="#">Темы</a></li>
+            <li class="header-nav__item"><a href="#">Сравнение тем</a></li>
+            <li class="header-nav__item link-active">
+              <a href="#">Подписка</a>
+            </li>
+            <li class="header-nav__item">
+              <a href="#">Оповещения</a
+              ><span class="notification-count">498</span>
+            </li>
+            <li class="header-nav__item"><a href="#">Журнал</a></li>
+            <li class="header-nav__item"><a href="#">Настройки</a></li>
+            <li class="header-nav__item"><a href="#">Помощь</a></li>
+          </ul>
+        </nav>
+
+        <div class="menu-burder"><span></span><span></span><span></span></div>
+        <a class="user" href="#">
+          <img
+            src="img/user.png"
+            srcset="img/user@2x.png 2x, img/user@3x.png 3x"
+            alt="user"
+          />
+          <img
+            src="img/arrow-select-gray.svg"
+            class="arrow_select_gray"
+            alt="arrow"
+          />
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <h1>Редактирование подписки</h1>
+
+        <div class="block-wrapper block-message">
+          <img src="img/icon-24-done.svg" class="icon24_done" alt="Сохранено" />
+          <div>
+            <p class="notification__title">Параметры подписки сохранены</p>
+            <p class="notification__text">
+              Перейти к созданию <a href="#">новой подписки</a> или к
+              <a href="#">списку подписок</a>
+            </p>
+          </div>
+        </div>
+
+        <form action="#">
+          <div class="block-wrapper form__theme-email">
+            <div class="theme">
+              <label>Тема</label>
+              <select class="appearance" name="theme" disabled>
+                <option value="theme1">ИА тема</option>
+              </select>
+            </div>
+            <div class="email">
+              <div class="block-email">
+                <label>E-mail </label>
+                <span
+                  >Можно ввести несколько email через запятую (не более
+                  20)</span
+                >
+              </div>
+
+              <textarea
+                name="email"
+                placeholder="n.a.kaliberda@gmail.com, alekshikari@gmail.com"
+              ></textarea>
+            </div>
+          </div>
+          <div class="block-wrapper form__notifications-frequency">
+            <label>Получать</label>
+
+            <input class="appearance" type="radio" name="option" />
+            <span class="form-notifications__radio-text">Новые сообщения</span>
+            <input class="appearance" type="radio" name="option" checked />
+            <span class="form-notifications__radio-text">Отчет</span>
+
+            <div class="form-frequency__time">
+              <div>
+                <label>Периодичность</label>
+                <select class="appearance" name="periodicity">
+                  <option value="monthly">Раз в месяц</option>
+                </select>
+              </div>
+              <div>
+                <label>Время получения (UTC+3)</label>
+                <select class="appearance" name="hour">
+                  <option value="16">16 ч.</option>
+                </select>
+                <select class="appearance" name="minute">
+                  <option value="25">25 мин.</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="block-wrapper form__format">
+            <p class="block-title">Формат</p>
+            <div class="format">
+              <div class="custom-radio custom-radio--active">
+                <img src="img/excel.svg" alt="Excel" />
+                <span>Excel</span>
+              </div>
+
+              <div class="custom-radio">
+                <img src="img/word.svg" alt="Word" />
+                <span>Word</span>
+              </div>
+
+              <div class="custom-radio">
+                <img src="img/pdf.svg" alt="PDF" />
+                <span>Pdf</span>
+              </div>
+            </div>
+
+            <label>Заголовок</label>
+            <input class="form__format-input" type="text" value="Отчет" />
+
+            <label>Подзаголовок</label>
+            <input
+              class="form__format-input"
+              type="text"
+              value="Анализ упоминаний в социальных медиа"
+            />
+          </div>
+          <div class="block-wrapper form__data-filter">
+            <p class="block-title">Фильтр данных для отчета</p>
+            <div class="filter-block">
+              <input
+                class="appearance"
+                type="radio"
+                name="filter"
+                value="all"
+                id="all"
+                checked
+              />
+              <label for="all">Вся тема</label>
+
+              <input
+                class="appearance"
+                type="radio"
+                name="filter"
+                value="tags"
+                id="tags"
+              />
+              <label for="tags">Выбранные теги</label>
+
+              <input
+                class="appearance"
+                type="radio"
+                name="filter"
+                value="filters"
+                id="filters"
+              />
+              <label for="filters">Выбранные персональные фильтры</label>
+            </div>
+          </div>
+          <div class="block-wrapper form__data-language">
+            <p class="block-title">Состав данных</p>
+            <div class="data-composition">
+              <div class="items">
+                <label
+                  ><input class="appearance" type="checkbox" disabled checked />
+                  Сводные данные</label
+                >
+                <label
+                  ><input class="appearance" type="checkbox" checked />
+                  Упоминания (максимум 20 000)</label
+                >
+                <label>
+                  <input class="appearance" type="checkbox" />
+                  Тональность</label
+                >
+                <label
+                  ><input class="appearance" type="checkbox" checked />
+                  Источники</label
+                >
+                <label
+                  ><input class="appearance" type="checkbox" /> Авторы</label
+                >
+              </div>
+              <div class="items">
+                <label
+                  ><input class="appearance" type="checkbox" />
+                  Сообщества</label
+                >
+                <label
+                  ><input class="appearance" type="checkbox" /> География</label
+                >
+                <label
+                  ><input class="appearance" type="checkbox" checked />
+                  Теги</label
+                >
+                <label>
+                  <input class="appearance" type="checkbox" /> Ссылки</label
+                >
+                <label
+                  ><input class="appearance" type="checkbox" checked />
+                  Популярные слова</label
+                >
+              </div>
+              <div class="items">
+                <label>
+                  <input class="appearance" type="checkbox" /> Персоны</label
+                >
+                <label
+                  ><input class="appearance" type="checkbox" /> Юридические
+                  лица</label
+                >
+                <label
+                  ><input class="appearance" type="checkbox" /> Места</label
+                >
+                <label>
+                  <input class="appearance" type="checkbox" /> Сравнение с
+                  конкурентами</label
+                >
+              </div>
+            </div>
+            <div class="language-selection">
+              <label>Язык</label>
+              <input
+                class="appearance"
+                type="radio"
+                value="russian"
+                name="lang"
+              />
+              <span class="lang-ru">Русский</span>
+              <input
+                class="appearance"
+                type="radio"
+                value="english"
+                name="lang"
+                checked
+              /><span class="lang-en"> Английский</span>
+            </div>
+          </div>
+
+          <div class="switch">
+            <button class="btn-switch"></button>
+            <span>Подписка активна</span>
+          </div>
+
+          <button type="submit" class="btn-save">Сохранить изменения</button>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <a href="#">Написать в техподдержку</a>
+      <p>© 2012-2024 Brand Analytics</p>
+    </footer>
+  </body>
+</html>
