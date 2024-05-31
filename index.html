@@ -116,21 +116,40 @@
           </div>
           <div class="block-wrapper form__format">
             <p class="block-title">Формат</p>
-            <div class="format">
-              <div class="custom-radio custom-radio--active">
-                <img src="img/excel.svg" alt="Excel" />
+            <div class="format-selector">
+              <input
+                type="radio"
+                id="format1"
+                name="format"
+                class="format-input"
+                checked
+              />
+              <label for="format1" class="format-option">
+                <img src="img/excel.svg" alt="Format 1" />
                 <span>Excel</span>
-              </div>
+              </label>
 
-              <div class="custom-radio">
-                <img src="img/word.svg" alt="Word" />
+              <input
+                type="radio"
+                id="format2"
+                name="format"
+                class="format-input"
+              />
+              <label for="format2" class="format-option">
+                <img src="img/word.svg" alt="Format 2" />
                 <span>Word</span>
-              </div>
+              </label>
 
-              <div class="custom-radio">
-                <img src="img/pdf.svg" alt="PDF" />
+              <input
+                type="radio"
+                id="format3"
+                name="format"
+                class="format-input"
+              />
+              <label for="format3" class="format-option">
+                <img src="img/pdf.svg" alt="Format 3" />
                 <span>Pdf</span>
-              </div>
+              </label>
             </div>
 
             <label>Заголовок</label>
@@ -181,63 +200,70 @@
               <div class="items">
                 <label
                   ><input class="appearance" type="checkbox" disabled checked />
-                  Сводные данные</label
-                >
+                  <span> Сводные данные</span>
+                </label>
                 <label
                   ><input class="appearance" type="checkbox" checked />
-                  Упоминания (максимум 20 000)</label
+                  <span>Упоминания (максимум 20 000)</span></label
                 >
                 <label>
                   <input class="appearance" type="checkbox" />
-                  Тональность</label
-                >
+                  <span>Тональность</span>
+                </label>
                 <label
                   ><input class="appearance" type="checkbox" checked />
-                  Источники</label
-                >
+                  <span>Источники</span>
+                </label>
                 <label
-                  ><input class="appearance" type="checkbox" /> Авторы</label
+                  ><input class="appearance" type="checkbox" />
+                  <span>Авторы</span></label
                 >
               </div>
               <div class="items">
                 <label
                   ><input class="appearance" type="checkbox" />
-                  Сообщества</label
+                  <span>Сообщества</span></label
                 >
                 <label
-                  ><input class="appearance" type="checkbox" /> География</label
+                  ><input class="appearance" type="checkbox" />
+                  <span>География</span></label
                 >
                 <label
                   ><input class="appearance" type="checkbox" checked />
-                  Теги</label
+                  <span>Теги</span></label
                 >
                 <label>
-                  <input class="appearance" type="checkbox" /> Ссылки</label
+                  <input class="appearance" type="checkbox" />
+                  <span>Ссылки</span></label
                 >
                 <label
                   ><input class="appearance" type="checkbox" checked />
-                  Популярные слова</label
-                >
+                  <span>Популярные слова</span>
+                </label>
               </div>
               <div class="items">
                 <label>
-                  <input class="appearance" type="checkbox" /> Персоны</label
-                >
+                  <input class="appearance" type="checkbox" />
+                  <span>Персоны</span>
+                </label>
                 <label
-                  ><input class="appearance" type="checkbox" /> Юридические
-                  лица</label
-                >
+                  ><input class="appearance" type="checkbox" /><span
+                    >Юридические лица</span
+                  >
+                </label>
                 <label
-                  ><input class="appearance" type="checkbox" /> Места</label
-                >
+                  ><input class="appearance" type="checkbox" />
+                  <span>Места</span>
+                </label>
                 <label>
-                  <input class="appearance" type="checkbox" /> Сравнение с
-                  конкурентами</label
-                >
+                  <input class="appearance" type="checkbox" />
+                  <span>Сравнение с конкурентами</span>
+                </label>
               </div>
             </div>
             <div class="language-selection">
               <label>Язык</label>
+
               <input
                 class="appearance"
                 type="radio"
@@ -245,6 +271,7 @@
                 name="lang"
               />
               <span class="lang-ru">Русский</span>
+
               <input
                 class="appearance"
                 type="radio"
@@ -256,7 +283,7 @@
           </div>
 
           <div class="switch">
-            <button class="btn-switch"></button>
+            <input class="appearance" type="checkbox" checked />
             <span>Подписка активна</span>
           </div>
 
