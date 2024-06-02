@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-      <div class="header__content">
+      <div class="header__content flex-center">
         <a href="#" class="logo">
           <img
             src="img/logo-darkbackground.svg"
@@ -18,7 +18,7 @@
           />
         </a>
         <nav>
-          <ul class="header-nav__items">
+          <ul class="header-nav__items flex-center">
             <li class="header-nav__item"><a href="#">Темы</a></li>
             <li class="header-nav__item"><a href="#">Сравнение тем</a></li>
             <li class="header-nav__item link-active">
@@ -26,7 +26,7 @@
             </li>
             <li class="header-nav__item">
               <a href="#">Оповещения</a
-              ><span class="notification-count">498</span>
+              ><span class="notification-count bold">498</span>
             </li>
             <li class="header-nav__item"><a href="#">Журнал</a></li>
             <li class="header-nav__item"><a href="#">Настройки</a></li>
@@ -34,8 +34,10 @@
           </ul>
         </nav>
 
-        <div class="menu-burder"><span></span><span></span><span></span></div>
-        <a class="user" href="#">
+        <button class="menu-burder">
+          <span></span><span></span><span></span>
+        </button>
+        <button class="user flex-center">
           <img
             src="img/user.png"
             srcset="img/user@2x.png 2x, img/user@3x.png 3x"
@@ -46,18 +48,17 @@
             class="arrow_select_gray"
             alt="arrow"
           />
-        </a>
+        </button>
       </div>
     </header>
-
     <main>
       <div class="container">
-        <h1>Редактирование подписки</h1>
+        <h1 class="bold">Редактирование подписки</h1>
 
         <div class="block-wrapper block-message">
-          <img src="img/icon-24-done.svg" class="icon24_done" alt="Сохранено" />
+          <img src="img/icon-24-done.svg" alt="Сохранено" />
           <div>
-            <p class="notification__title">Параметры подписки сохранены</p>
+            <p class="notification__title bold">Параметры подписки сохранены</p>
             <p class="notification__text">
               Перейти к созданию <a href="#">новой подписки</a> или к
               <a href="#">списку подписок</a>
@@ -68,54 +69,56 @@
         <form action="#">
           <div class="block-wrapper form__theme-email">
             <div class="theme">
-              <label>Тема</label>
-              <select class="appearance" name="theme" disabled>
+              <label for="theme-select">Тема</label>
+              <select id="theme-select" name="theme" disabled>
                 <option value="theme1">ИА тема</option>
               </select>
             </div>
             <div class="email">
               <div class="block-email">
-                <label>E-mail </label>
-                <span
-                  >Можно ввести несколько email через запятую (не более
-                  20)</span
-                >
+                <label for="email-input">E-mail </label>
+                <span>Можно ввести несколько email через запятую (не более 20)</span>
               </div>
 
               <textarea
                 name="email"
-                placeholder="n.a.kaliberda@gmail.com, alekshikari@gmail.com"
-              ></textarea>
+                id="email-input"
+                placeholder="n.a.kaliberda@gmail.com, alekshikari@gmail.com"></textarea>
             </div>
           </div>
           <div class="block-wrapper form__notifications-frequency">
             <label>Получать</label>
-
-            <input class="appearance" type="radio" name="option" />
-            <span class="form-notifications__radio-text">Новые сообщения</span>
-            <input class="appearance" type="radio" name="option" checked />
-            <span class="form-notifications__radio-text">Отчет</span>
+            <div class="form-notifications">
+              <label class="flex-center" for="new-messages">
+                <input id="new-messages" type="radio" name="option" />
+                <span class="form-notifications__radio-text">Новые сообщения</span>
+              </label>
+              <label class="flex-center" for="reports">
+                <input id="reports" type="radio" name="option" checked />
+                <span class="form-notifications__radio-text">Отчет</span>
+              </label>
+            </div>
 
             <div class="form-frequency__time">
               <div>
-                <label>Периодичность</label>
-                <select class="appearance" name="periodicity">
+                <label for="periodicity">Периодичность</label>
+                <select id="periodicity" name="periodicity">
                   <option value="monthly">Раз в месяц</option>
                 </select>
               </div>
               <div>
-                <label>Время получения (UTC+3)</label>
-                <select class="appearance" name="hour">
-                  <option value="16">16 ч.</option>
+                <label for="hour">Время получения (UTC+3)</label>
+                <select id="hour" name="hour">
+                  <option value="16">16 &nbsp;ч.</option>
                 </select>
-                <select class="appearance" name="minute">
-                  <option value="25">25 мин.</option>
+                <select id="minute" name="minute">
+                  <option value="25">25 &nbsp;мин.</option>
                 </select>
               </div>
             </div>
           </div>
           <div class="block-wrapper form__format">
-            <p class="block-title">Формат</p>
+            <p class="block-title bold">Формат</p>
             <div class="format-selector">
               <input
                 type="radio"
@@ -124,8 +127,8 @@
                 class="format-input"
                 checked
               />
-              <label for="format1" class="format-option">
-                <img src="img/excel.svg" alt="Format 1" />
+              <label for="format1" class="format-option flex-center">
+                <img src="img/excel.svg" alt="Excel" />
                 <span>Excel</span>
               </label>
 
@@ -135,8 +138,8 @@
                 name="format"
                 class="format-input"
               />
-              <label for="format2" class="format-option">
-                <img src="img/word.svg" alt="Format 2" />
+              <label for="format2" class="format-option flex-center">
+                <img src="img/word.svg" alt="Word" />
                 <span>Word</span>
               </label>
 
@@ -146,117 +149,93 @@
                 name="format"
                 class="format-input"
               />
-              <label for="format3" class="format-option">
-                <img src="img/pdf.svg" alt="Format 3" />
+              <label for="format3" class="format-option flex-center">
+                <img src="img/pdf.svg" alt="Pdf" />
                 <span>Pdf</span>
               </label>
             </div>
 
-            <label>Заголовок</label>
-            <input class="form__format-input" type="text" value="Отчет" />
-
-            <label>Подзаголовок</label>
+            <label for="title">Заголовок</label>
             <input
+              id="title"
+              class="form__format-input"
+              type="text"
+              value="Отчет"
+            />
+
+            <label for="subtitle">Подзаголовок</label>
+            <input
+              id="subtitle"
               class="form__format-input"
               type="text"
               value="Анализ упоминаний в социальных медиа"
             />
           </div>
           <div class="block-wrapper form__data-filter">
-            <p class="block-title">Фильтр данных для отчета</p>
-            <div class="filter-block">
-              <input
-                class="appearance"
-                type="radio"
-                name="filter"
-                value="all"
-                id="all"
-                checked
-              />
+            <p class="block-title bold">Фильтр данных для отчета</p>
+            <div class="filter-block flex-center">
+              <input type="radio" name="filter" value="all" id="all" checked />
               <label for="all">Вся тема</label>
 
-              <input
-                class="appearance"
-                type="radio"
-                name="filter"
-                value="tags"
-                id="tags"
-              />
+              <input type="radio" name="filter" value="tags" id="tags" />
               <label for="tags">Выбранные теги</label>
 
-              <input
-                class="appearance"
-                type="radio"
-                name="filter"
-                value="filters"
-                id="filters"
-              />
+              <input type="radio" name="filter" value="filters" id="filters" />
               <label for="filters">Выбранные персональные фильтры</label>
             </div>
           </div>
+          
           <div class="block-wrapper form__data-language">
-            <p class="block-title">Состав данных</p>
+            <p class="block-title bold">Состав данных</p>
             <div class="data-composition">
               <div class="items">
-                <label
-                  ><input class="appearance" type="checkbox" disabled checked />
+                <label>
+                  <input type="checkbox" disabled checked />
                   <span> Сводные данные</span>
                 </label>
-                <label
-                  ><input class="appearance" type="checkbox" checked />
-                  <span>Упоминания (максимум 20 000)</span></label
-                >
                 <label>
-                  <input class="appearance" type="checkbox" />
+                  <input type="checkbox" checked />
+                  <span>Упоминания (максимум 20 000)</span>
+                </label>
+                <label>
+                  <input type="checkbox" />
                   <span>Тональность</span>
                 </label>
-                <label
-                  ><input class="appearance" type="checkbox" checked />
+                <label>
+                  <input type="checkbox" checked />
                   <span>Источники</span>
                 </label>
-                <label
-                  ><input class="appearance" type="checkbox" />
-                  <span>Авторы</span></label
-                >
+                <label><input type="checkbox" /> <span>Авторы</span></label>
               </div>
               <div class="items">
-                <label
-                  ><input class="appearance" type="checkbox" />
-                  <span>Сообщества</span></label
-                >
-                <label
-                  ><input class="appearance" type="checkbox" />
-                  <span>География</span></label
-                >
-                <label
-                  ><input class="appearance" type="checkbox" checked />
-                  <span>Теги</span></label
-                >
+                <label><input type="checkbox" /> <span>Сообщества</span></label>
+                <label><input type="checkbox" /> <span>География</span></label>
                 <label>
-                  <input class="appearance" type="checkbox" />
-                  <span>Ссылки</span></label
-                >
-                <label
-                  ><input class="appearance" type="checkbox" checked />
+                  <input type="checkbox" checked /> <span>Теги</span>
+                </label>
+                <label>
+                  <input type="checkbox" />
+                  <span>Ссылки</span>
+                </label>
+                <label>
+                  <input type="checkbox" checked />
                   <span>Популярные слова</span>
                 </label>
               </div>
               <div class="items">
                 <label>
-                  <input class="appearance" type="checkbox" />
+                  <input type="checkbox" />
                   <span>Персоны</span>
                 </label>
-                <label
-                  ><input class="appearance" type="checkbox" /><span
-                    >Юридические лица</span
-                  >
+                <label>
+                  <input type="checkbox" /><span>Юридические лица</span>
                 </label>
-                <label
-                  ><input class="appearance" type="checkbox" />
+                <label>
+                  <input type="checkbox" />
                   <span>Места</span>
                 </label>
                 <label>
-                  <input class="appearance" type="checkbox" />
+                  <input type="checkbox" />
                   <span>Сравнение с конкурентами</span>
                 </label>
               </div>
@@ -264,26 +243,27 @@
             <div class="language-selection">
               <label>Язык</label>
 
-              <input
-                class="appearance"
-                type="radio"
-                value="russian"
-                name="lang"
-              />
-              <span class="lang-ru">Русский</span>
+              <div class="language-selection__items">
+                <label class="flex-center">
+                  <input type="radio" value="russian" name="lang" />
+                  <span class="lang-ru">Русский</span>
+                </label>
 
-              <input
-                class="appearance"
-                type="radio"
-                value="english"
-                name="lang"
-                checked
-              /><span class="lang-en"> Английский</span>
+                <label class="flex-center">
+                  <input
+                    type="radio"
+                    value="english"
+                    name="lang"
+                    checked
+                  />
+                  <span class="lang-en"> Английский</span>
+                </label>
+              </div>
             </div>
           </div>
 
-          <div class="switch">
-            <input class="appearance" type="checkbox" checked />
+          <div class="switch flex-center">
+            <input type="checkbox" checked />
             <span>Подписка активна</span>
           </div>
 
