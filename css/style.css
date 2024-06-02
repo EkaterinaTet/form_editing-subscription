@@ -1,16 +1,12 @@
 @font-face {
   font-family: "Gravity";
-  src: url("../fonts/Gravity-Regular.woff2") format("woff2"),
-    url("../fonts/Gravity-Regular.woff") format("woff"),
-    url("../fonts/Gravity-Regular.otf") format("opentype");
+  src: url("../fonts/Gravity-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Gravity";
-  src: url("../fonts/Gravity-Bold.woff2") format("woff2"),
-    url("../fonts/Gravity-Bold.woff") format("woff"),
-    url("../fonts/Gravity-Bold.otf") format("opentype");
+  src: url("../fonts/Gravity-Bold.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
 }
@@ -38,8 +34,8 @@ a {
 }
 h1 {
   font-size: 20px;
-  font-weight: bold;
-  margin: 22px 6px 18px;
+  line-height: 1.2;
+  margin: 20px 4px 19px;
 }
 button {
   cursor: pointer;
@@ -50,7 +46,6 @@ body {
   font-weight: normal;
   color: #292f37;
   font-stretch: normal;
-  font-style: normal;
   letter-spacing: normal;
   background-color: #f5f7fa;
   overflow-x: hidden;
@@ -60,6 +55,7 @@ body {
 }
 header {
   background-color: #323a44;
+  min-height: 52px;
 }
 main {
   max-width: 772px;
@@ -73,13 +69,17 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 21px 20px 19px;
+}
+nav {
+  margin-right: 88px;
 }
 label {
   font-size: 12px;
   color: #979ca9;
   display: block;
-  margin-bottom: 6px;
+  line-height: 1.33;
+  margin-bottom: 5px;
 }
 textarea {
   resize: none;
@@ -90,41 +90,46 @@ select {
   border: solid 1px #cbcfd8;
   border-radius: 4px;
   cursor: pointer;
+  line-height: 1.23;
   background: url("../img/arrow-select-gray-dark.svg") no-repeat right 11px
     center;
-  padding: 8px 11px 9px;
-  margin-bottom: 18px;
+  padding: 6px 11px 9px;
+  margin-bottom: 17px;
 }
-.appearance {
+input[type="radio"],
+input[type="checkbox"],
+select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
+.bold {
+  font-weight: bold;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+}
 .menu-burder {
   display: none;
 }
+
 .container {
   width: 100%;
-  margin-left: -35px;
+  margin-left: -34px;
 }
 .header__content {
   max-width: 1280px;
-  display: flex;
   justify-content: space-between;
-  align-items: center;
-  min-height: 52px;
   margin: 0 auto;
   padding: 0 20px;
-}
-.header-nav__items {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin-right: 90px;
 }
 .header-nav__item {
   color: #cbcfd8;
   padding: 17px 23px 19px;
+}
+.header-nav__item:nth-child(1) {
+  margin-right: 5px;
 }
 .header-nav__item:nth-child(4) {
   padding-right: 5px;
@@ -135,7 +140,6 @@ select {
   left: 2px;
   bottom: 8px;
   font-size: 9px;
-  font-weight: bold;
   text-align: center;
   background-color: #cf6662;
   border-radius: 2px;
@@ -150,50 +154,59 @@ select {
   background: #292f37;
 }
 .user {
-  display: flex;
   gap: 12px;
+  border: none;
+  background-color: transparent;
 }
+
 .block-wrapper {
   background-color: #fff;
   border-radius: 8px;
   margin-bottom: 16px;
-  padding: 12px 19px 21px 21px;
+  padding: 12px 20px 20px;
 }
 .block-message {
   display: flex;
   gap: 12px;
-  align-items: flex-start;
   min-height: 81px;
 }
 .block-message img {
-  padding-top: 2px;
+  width: 24px;
+  height: 24px;
+  margin-top: 2px;
 }
 .notification__title {
   font-size: 17px;
-  font-weight: bold;
-  padding-top: 5px;
-  margin-bottom: 10px;
+  padding-top: 3px;
+  line-height: 1.29;
+  margin-bottom: 8px;
 }
 .notification__text {
   color: #4c515c;
+  line-height: 1.23;
 }
 .notification__text a {
   color: #4870b7;
 }
 .form__theme-email {
   min-height: 224px;
-  padding-top: 14px;
-}
-.form__theme-email label {
-  margin-bottom: 5px;
+  padding-top: 13px;
 }
 .form__notifications-frequency {
   min-height: 146px;
   padding-top: 13px;
 }
+.form-notifications {
+  display: flex;
+  gap: 33px;
+  margin: 7px 0 12px;
+}
+.form-notifications label {
+  gap: 8px;
+}
 .block-title {
   font-size: 15px;
-  font-weight: bold;
+  line-height: 1.2;
   margin-bottom: 12px;
 }
 select[name="theme"] {
@@ -215,26 +228,24 @@ select[name="minute"] {
 .block-email span {
   font-size: 12px;
   color: #979ca9;
+  padding: 2px 1px 0 0;
 }
 textarea[name="email"] {
   width: 100%;
   border-radius: 4px;
   border: solid 1px #cbcfd8;
   height: 96px;
-  padding: 8px 25px 7px 11px;
-  margin-top: 1px;
+  padding: 7px 25px 7px 11px;
 }
 .form-notifications__radio-text,
 textarea::placeholder {
   color: #4c515c;
 }
-
 input[type="radio"] {
   width: 16px;
   height: 16px;
   border-radius: 50%;
   outline: none;
-  margin: 2px 5px 17px 0px;
 }
 input[type="radio"]:not(:checked) {
   border: solid 1px #cbcfd8;
@@ -247,8 +258,9 @@ input[type="radio"]::before {
   content: "";
   display: inline-block;
 }
-.form-notifications__radio-text:first-of-type {
-  margin-right: 38px;
+.form-notifications__radio-text {
+  font-size: 13px;
+  line-height: 1.23;
 }
 .form-frequency__time {
   display: flex;
@@ -267,6 +279,7 @@ input[type="radio"]::before {
   width: 100%;
   height: 32px;
   color: #4c515c;
+  line-height: 1.23;
   border-radius: 4px;
   border: solid 1px #cbcfd8;
   padding: 7px 11px 9px;
@@ -276,7 +289,7 @@ input[type="radio"]::before {
 }
 .format-selector {
   display: flex;
-  gap: 13px;
+  gap: 11px;
   flex-wrap: wrap;
   margin-bottom: 12px;
 }
@@ -284,43 +297,40 @@ input[type="radio"]::before {
   display: none;
 }
 .format-option {
-  display: flex;
   flex-direction: row;
   gap: 12px;
   color: #4c515c;
   font-size: 13px;
-  text-align: center;
-  align-items: center;
+  line-height: 1.23;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  padding: 8px 20px 8px 8px;
+  padding: 8px 21px 8px 8px;
 }
 .format-input:checked + .format-option {
   background-color: #d8e4f9;
   border-radius: 4px;
 }
-
+#subtitle {
+  margin-top: -1px;
+}
 .form__data-filter {
   min-height: 88px;
 }
-.form__data-filter .block-title {
-  margin-bottom: 11px;
-}
 .filter-block {
-  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 14px;
-  align-items: center;
+  gap: 12px;
+  margin-left: -1px;
 }
 .filter-block label {
   font-size: 12px;
   color: #4870b7;
   cursor: pointer;
+  line-height: 1.33;
   margin: 0 1px;
 }
 label[for="filters"] {
-  margin-left: 7px;
+  margin-left: 3px;
 }
 .filter-block input[type="radio"] {
   display: none;
@@ -329,7 +339,7 @@ label[for="filters"] {
   background-color: #5b85ce;
   color: #fff;
   border-radius: 11px;
-  padding: 4px 11px 4px;
+  padding: 3px 10px 3px;
 }
 label[for="tags"] {
   margin-right: 10px;
@@ -337,39 +347,50 @@ label[for="tags"] {
 .form__data-language {
   min-height: 262px;
 }
+.form__data-language p {
+  margin-top: 1px;
+}
 .data-composition {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 19px;
   margin: 15px 0 14px;
 }
 .data-composition div {
   display: flex;
   flex-direction: column;
 }
-.language-selection input {
+.language-selection label {
+  margin-bottom: 6px;
+}
+.language-selection__items {
+  display: flex;
+  gap: 25px;
+}
+.language-selection__items label {
+  gap: 8px;
   margin-bottom: 0;
 }
-.language-selection span {
+.language-selection__items span {
+  font-size: 13px;
+  line-height: 1.23;
   color: #4c515c;
 }
-
 .items:nth-child(2) {
-  margin-right: 78px;
+  margin-right: 83px;
 }
 .items label {
   display: flex;
   align-items: center;
   font-size: 13px;
   color: #4c515c;
-  margin-bottom: 11px;
+  margin-bottom: 12px;
 }
 .items label span {
-  margin-top: 2px;
+  line-height: 1.23;
 }
 .items label input {
-  vertical-align: bottom;
   margin-right: 10px;
 }
 .items input[type="checkbox"] {
@@ -390,17 +411,13 @@ label[for="tags"] {
   background-image: url(../img/checkbox-check.svg);
 }
 
-.lang-ru {
-  margin-right: 27px;
-}
 .switch {
-  display: flex;
-  align-items: center;
-  margin: 19px 0 0 25px;
+  margin: 20px 0 0 24px;
 }
 .switch span {
   color: #4c515c;
   margin-left: 12px;
+  margin-top: -1px;
 }
 .switch input[type="checkbox"]:checked {
   background-color: #8fc144;
@@ -439,7 +456,7 @@ label[for="tags"] {
   width: 175px;
   height: 32px;
   border-radius: 4px;
-  margin: 32px 0px 48px 25px;
+  margin: 32px 0px 48px 24px;
 }
 
 @media (max-width: 970px) {
@@ -456,12 +473,13 @@ label[for="tags"] {
     order: 3;
     position: absolute;
     right: 20px;
+    border: none;
+    background: transparent;
   }
   .menu-burder span {
     width: 20px;
     height: 2px;
     background-color: #fff;
-    cursor: pointer;
   }
   .header__content {
     justify-content: flex-start;
